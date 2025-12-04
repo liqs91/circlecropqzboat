@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "name": "MkSaaS Demo",
-    "title": "MkSaaS - The Best AI SaaS Boilerplate",
-    "description": "MkSaaS is the best AI SaaS boilerplate. Make AI SaaS in days, simply and effortlessly"
+    "name": "Circle Crop Image",
+    "title": "Online Circle Image Cropper",
+    "description": "Free online tool to crop any image into a perfect circle – ideal for profile pictures, social media, and design projects."
   },
   "Common": {
     "premium": "Premium",
@@ -144,10 +144,10 @@
   },
   "AboutPage": {
     "title": "About",
-    "description": "This is MkSaaS, an AI SaaS template built with modern technologies, helping you build your SaaS faster and better.",
+    "description": "Free online circle image cropper - create perfect circular images in seconds.",
     "authorName": "MkSaaS",
-    "authorBio": "AI SaaS Boilerplate",
-    "introduction": "👋 Hi there! This is MkSaaS, an AI SaaS template built with modern technologies, helping you build your SaaS faster and better. If you have any questions, welcome to contact me.",
+    "authorBio": "Circle Crop Image",
+    "introduction": "Free online tool to crop any image into a perfect circle.",
     "talkWithMe": "Talk with me",
     "followMe": "Follow me on X"
   },
@@ -193,9 +193,9 @@
     }
   },
   "Newsletter": {
-    "title": "Newsletter",
+    "title": "Stay Updated",
     "subtitle": "Join the community",
-    "description": "Subscribe to our newsletter for the latest news and updates",
+    "description": "Get tips, updates, and new features delivered to your inbox",
     "form": {
       "email": "Email",
       "subscribe": "Subscribe",
@@ -445,7 +445,7 @@
       }
     },
     "footer": {
-      "tagline": "Make AI SaaS in days, simply and effortlessly",
+      "tagline": "Free online circle image cropper",
       "product": {
         "title": "Product",
         "items": {
@@ -780,14 +780,14 @@
     }
   },
   "HomePage": {
-    "title": "MkSaaS",
-    "description": "Make AI SaaS in days, simply and effortlessly",
+    "title": "Circle Crop Image",
+    "description": "Free online round photo cropper – create perfect circular images in seconds.",
     "hero": {
-      "title": "Make AI SaaS in days, simply and effortlessly",
-      "description": "The is a demo website built with MkSaaS, a Next.js SaaS boilerplate to help you build your AI SaaS faster and better.",
-      "introduction": "Introducing MkSaaS Boilerplate",
-      "primary": "Get Started",
-      "secondary": "See Demo"
+      "title": "Crop any image into a perfect circle in seconds",
+      "description": "Circle Crop Image is a free online tool to transform rectangular photos into clean, circular PNGs with transparent backgrounds – perfect for avatars, social media, and design projects.",
+      "introduction": "Image to URL Converter",
+      "primary": "Try it now",
+      "secondary": "View examples"
     },
     "logocloud": {
       "title": "Your favorite companies are our partners"
@@ -832,64 +832,64 @@
     },
     "features": {
       "title": "Features",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
+      "subtitle": "Why choose Circle Crop Image",
+      "description": "Everything you need to create perfect circular images in seconds",
       "items": {
         "item-1": {
-          "title": "Product Feature One",
-          "description": "Please write the detailed description of feature one here, make it as detailed as possible, make it more attractive to users"
+          "title": "Instant Processing",
+          "description": "Upload your image and get a perfect circular crop in seconds. No waiting, no delays - just fast, reliable image processing."
         },
         "item-2": {
-          "title": "Product Feature Two",
-          "description": "Please write the detailed description of feature two here, make it as detailed as possible, make it more attractive to users"
+          "title": "Privacy First",
+          "description": "All processing happens in your browser. Your images never leave your device - complete privacy and security guaranteed."
         },
         "item-3": {
-          "title": "Product Feature Three",
-          "description": "Please write the detailed description of feature three here, make it as detailed as possible, make it more attractive to users"
+          "title": "High Quality Output",
+          "description": "Download crisp, high-resolution PNG images with transparent backgrounds. Perfect for avatars, social media, and professional use."
         },
         "item-4": {
-          "title": "Product Feature Four",
-          "description": "Please write the detailed description of feature four here, make it as detailed as possible, make it more attractive to users"
+          "title": "Easy to Use",
+          "description": "No technical skills required. Simply upload, adjust zoom, and download. It's that simple - anyone can create perfect circles."
         }
       }
     },
     "features2": {
       "title": "Features2",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
-      "feature-1": "Product Feature One",
-      "feature-2": "Product Feature Two",
-      "feature-3": "Product Feature Three",
-      "feature-4": "Product Feature Four"
+      "subtitle": "Powerful features for all your needs",
+      "description": "Everything you need to create stunning circular images",
+      "feature-1": "Zoom Control",
+      "feature-2": "Transparent Background",
+      "feature-3": "PNG Format",
+      "feature-4": "No Watermarks"
     },
     "features3": {
       "title": "Features3",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
+      "subtitle": "Complete image cropping solution",
+      "description": "All the tools you need for perfect circular images",
       "items": {
         "item-1": {
-          "title": "Product Feature One",
-          "description": "Please write the detailed description of feature one here"
+          "title": "Browser-Based",
+          "description": "Works entirely in your browser - no software installation required"
         },
         "item-2": {
-          "title": "Product Feature Two",
-          "description": "Please write the detailed description of feature two here"
+          "title": "Multiple Formats",
+          "description": "Supports JPG, PNG, and other common image formats"
         },
         "item-3": {
-          "title": "Product Feature Three",
-          "description": "Please write the detailed description of feature three here"
+          "title": "Precise Control",
+          "description": "Adjust zoom level to get the perfect crop position"
         },
         "item-4": {
-          "title": "Product Feature Four",
-          "description": "Please write the detailed description of feature four here"
+          "title": "Instant Download",
+          "description": "Download your cropped image immediately in high quality"
         },
         "item-5": {
-          "title": "Product Feature Five",
-          "description": "Please write the detailed description of feature five here"
+          "title": "Free Forever",
+          "description": "No signup required, no hidden fees - completely free to use"
         },
         "item-6": {
-          "title": "Product Feature Six",
-          "description": "Please write the detailed description of feature six here"
+          "title": "Mobile Friendly",
+          "description": "Works perfectly on desktop, tablet, and mobile devices"
         }
       }
     },
@@ -903,124 +903,124 @@
       "subtitle": "Frequently Asked Questions",
       "items": {
         "item-1": {
-          "question": "Do you offer a free trial?",
-          "answer": "Yes, we offer a 7-day free trial."
+          "question": "Is Circle Crop Image free to use?",
+          "answer": "Yes, Circle Crop Image is completely free to use. No signup required, no hidden fees, and no watermarks on your images."
         },
         "item-2": {
-          "question": "How do I cancel my subscription?",
-          "answer": "You can cancel your subscription by visiting the billing page."
+          "question": "Do my images get uploaded to a server?",
+          "answer": "No, all image processing happens entirely in your browser. Your images never leave your device, ensuring complete privacy and security."
         },
         "item-3": {
-          "question": "Can I change my plan?",
-          "answer": "Yes, you can change your plan at any time by visiting the billing page."
+          "question": "What image formats are supported?",
+          "answer": "We support all common image formats including JPG, PNG, GIF, and WebP. The output is always a high-quality PNG with transparent background."
         },
         "item-4": {
-          "question": "What is the refund policy?",
-          "answer": "We offer a 30-day money-back guarantee if you are not happy with our product."
+          "question": "Can I use the cropped images commercially?",
+          "answer": "Yes, you own all rights to the images you create. Use them for personal projects, social media, or commercial purposes - it's completely up to you."
         },
         "item-5": {
-          "question": "Can't find what you're looking for?",
-          "answer": "Please contact our customer support team at support@mksaas.com"
+          "question": "What's the maximum image size I can upload?",
+          "answer": "You can upload images up to 10MB in size. For best results, we recommend images between 500x500 and 2000x2000 pixels."
         }
       }
     },
     "testimonials": {
       "title": "Testimonials",
-      "subtitle": "What our customers are saying",
+      "subtitle": "What our users are saying",
       "items": {
         "item-1": {
-          "name": "Jonathan Yombo",
-          "role": "Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/1.jpg",
-          "quote": "MkSaaS is really extraordinary and very practical, no need to break your head. A real gold mine."
+          "name": "Sarah Chen",
+          "role": "Social Media Manager",
+          "image": "https://randomuser.me/api/portraits/women/1.jpg",
+          "quote": "Circle Crop Image is a game-changer for my social media workflow. I can create perfect profile pictures in seconds without any design skills."
         },
         "item-2": {
-          "name": "Yves Kalume",
-          "role": "GDE - Android",
+          "name": "Michael Rodriguez",
+          "role": "Web Designer",
           "image": "https://randomuser.me/api/portraits/men/6.jpg",
-          "quote": "With no experience in webdesign I just redesigned my entire website in a few minutes with tailwindcss thanks to MkSaaS."
+          "quote": "The privacy aspect is amazing - knowing my images never leave my browser gives me complete peace of mind. Plus, the quality is outstanding."
         },
         "item-3": {
-          "name": "Yucel Faruksahan",
-          "role": "Tailkits Creator",
-          "image": "https://randomuser.me/api/portraits/men/7.jpg",
-          "quote": "Great work on MkSaaS template. This is one of the best personal website that I have seen so far :)"
+          "name": "Emily Johnson",
+          "role": "Content Creator",
+          "image": "https://randomuser.me/api/portraits/women/7.jpg",
+          "quote": "I use Circle Crop Image daily for my blog and social media. It's fast, free, and produces professional-quality results every time."
         },
         "item-4": {
-          "name": "Anonymous author",
-          "role": "Product Manager",
+          "name": "David Kim",
+          "role": "Marketing Director",
           "image": "https://randomuser.me/api/portraits/men/8.jpg",
-          "quote": "I downloaded the one of MkSaaS template which is very clear to understand at the start and you could modify the codes/blocks to fit perfectly on your purpose of the page."
+          "quote": "Perfect for creating team avatars and profile pictures. The zoom control lets me get exactly the crop I want. Highly recommended!"
         },
         "item-5": {
-          "name": "Shekinah Tshiokufila",
-          "role": "Senior Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/4.jpg",
-          "quote": "MkSaaS is redefining the standard of web design, with these blocks it provides an easy and efficient way for those who love beauty but may lack the time to implement it."
+          "name": "Lisa Wang",
+          "role": "Photographer",
+          "image": "https://randomuser.me/api/portraits/women/4.jpg",
+          "quote": "As a photographer, I appreciate the high-quality output. The transparent background PNGs are perfect for my portfolio website."
         },
         "item-6": {
-          "name": "Oketa Fred",
-          "role": "Fullstack Developer",
+          "name": "James Taylor",
+          "role": "Small Business Owner",
           "image": "https://randomuser.me/api/portraits/men/2.jpg",
-          "quote": "I absolutely love MkSaaS! The component blocks are beautifully designed and easy to use, which makes creating a great-looking website a breeze."
+          "quote": "No signup, no hassle, just upload and download. This is exactly what I needed for my business profile pictures. Simple and effective!"
         },
         "item-7": {
-          "name": "Zeki",
-          "role": "Founder of ChatExtend",
-          "image": "https://randomuser.me/api/portraits/men/5.jpg",
-          "quote": "MkSaaS is the perfect fusion of simplicity and versatility, enabling us to create UIs that are as stunning as they are user-friendly."
+          "name": "Maria Garcia",
+          "role": "Graphic Designer",
+          "image": "https://randomuser.me/api/portraits/women/5.jpg",
+          "quote": "The browser-based processing is brilliant. I can use it on any device, anywhere, without installing anything. Perfect for quick edits on the go."
         },
         "item-8": {
-          "name": "Joseph Kitheka",
-          "role": "Fullstack Developer",
+          "name": "Robert Brown",
+          "role": "Developer",
           "image": "https://randomuser.me/api/portraits/men/9.jpg",
-          "quote": "MkSaaS has transformed the way I develop web applications. Their extensive collection of UI components, blocks, and templates has significantly accelerated my workflow."
+          "quote": "I love that it's completely free with no watermarks. The quality is professional-grade, and it works flawlessly every time."
         },
         "item-9": {
-          "name": "Khatab Wedaa",
-          "role": "MerakiUI Creator",
-          "image": "https://randomuser.me/api/portraits/men/10.jpg",
-          "quote": "MkSaaS is an elegant, clean, and responsive tailwind css components it's very helpful to start fast with your project."
+          "name": "Jennifer Lee",
+          "role": "Blogger",
+          "image": "https://randomuser.me/api/portraits/women/10.jpg",
+          "quote": "Creating circular images for my blog has never been easier. The interface is intuitive, and the results are always perfect."
         },
         "item-10": {
-          "name": "Rodrigo Aguilar",
-          "role": "TailwindAwesome Creator",
+          "name": "Thomas Anderson",
+          "role": "Entrepreneur",
           "image": "https://randomuser.me/api/portraits/men/11.jpg",
-          "quote": "I love MkSaaS ❤️. The component blocks are well-structured, simple to use, and beautifully designed. It makes it really easy to have a good-looking website in no time."
+          "quote": "Best free tool I've found for circular image cropping. Fast, reliable, and produces high-quality results. What more could you ask for?"
         },
         "item-11": {
-          "name": "Eric Ampire",
-          "role": "@GoogleDevExpert for Android",
-          "image": "https://randomuser.me/api/portraits/men/12.jpg",
-          "quote": "MkSaaS templates are the perfect solution for anyone who wants to create a beautiful and functional website without any web design experience."
+          "name": "Amanda White",
+          "role": "E-commerce Manager",
+          "image": "https://randomuser.me/api/portraits/women/12.jpg",
+          "quote": "Perfect for product images and team photos. The transparent background feature is exactly what I needed for my online store."
         },
         "item-12": {
-          "name": "Roland Tubonge",
-          "role": "Software Engineer",
+          "name": "Christopher Martinez",
+          "role": "Freelancer",
           "image": "https://randomuser.me/api/portraits/men/13.jpg",
-          "quote": "MkSaaS is so well designed that even with a very poor knowledge of web design you can do miracles. Let yourself be seduced!"
+          "quote": "I use this tool for all my client projects. It's professional, fast, and completely free. My clients love the results!"
         }
       }
     },
     "stats": {
       "title": "Stats",
-      "subtitle": "MkSaaS in numbers",
-      "description": "MkSaaS lets you make AI SaaS in days, simply and effortlessly",
+      "subtitle": "Circle Crop Image in numbers",
+      "description": "Join thousands of users creating perfect circular images every day",
       "items": {
         "item-1": {
-          "title": "Stars on GitHub"
+          "title": "Images Cropped"
         },
         "item-2": {
-          "title": "Active Users"
+          "title": "Daily Active Users"
         },
         "item-3": {
-          "title": "Powered Apps"
+          "title": "Countries Served"
         }
       }
     },
     "calltoaction": {
-      "title": "Start Building",
-      "description": "MkSaaS lets you make AI SaaS in days, simply and effortlessly",
+      "title": "Start Cropping",
+      "description": "Free online tool to crop images into perfect circles",
       "primaryButton": "Get Started",
       "secondaryButton": "See Demo"
     }

@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "name": "MkSaaS Demo",
-    "title": "MkSaaS - 最好的 AI SaaS 模板",
-    "description": "MkSaaS 是构建 AI SaaS 的最佳模板，使用 MkSaaS 可以在几天内轻松构建您的 AI SaaS，简单且毫不费力。"
+    "name": "Circle Crop Image",
+    "title": "圆形图片裁剪工具 - 免费在线工具",
+    "description": "免费在线工具，将任何图片裁剪成完美的圆形 - 适合头像、社交媒体和设计项目。"
   },
   "Common": {
     "premium": "付费文章",
@@ -785,7 +785,7 @@
     "hero": {
       "title": "使用 MkSaaS 轻松构建您的 AI SaaS 产品",
       "description": "MkSaaS 是构建 AI SaaS 的最佳模板，内置 AI、身份验证、全球支付、博客、文档、邮件订阅、SEO、多彩主题、丰富组件等。",
-      "introduction": "介绍 MkSaaS 模板",
+      "introduction": "图片转链接工具",
       "primary": "开始使用",
       "secondary": "查看演示"
     },

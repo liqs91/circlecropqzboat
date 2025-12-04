@@ -1,41 +1,26 @@
-import { Ripple } from '@/components/magicui/ripple';
-import { AnimatedGroup } from '@/components/tailark/motion/animated-group';
-import { TextEffect } from '@/components/tailark/motion/text-effect';
-import { Button } from '@/components/ui/button';
-import { LocaleLink } from '@/i18n/navigation';
-import { ArrowRight } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-import Image from 'next/image';
+'use client';
 
-const transitionVariants = {
-  item: {
-    hidden: {
-      opacity: 0,
-      y: 12,
-      scale: 0.95,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: 'spring',
-        bounce: 0.3,
-        duration: 1.5,
-      },
-    },
-  },
-};
+import { Button } from '@/components/ui/button';
+import { ArrowRight, ArrowDown } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import React from 'react';
 
 export default function HeroSection() {
   const t = useTranslations('HomePage.hero');
-  const linkIntroduction = 'https://x.com/mksaascom';
-  const linkPrimary = '/#pricing';
-  const linkSecondary = 'https://demo.mksaas.com';
+  const linkIntroduction = 'https://www.image2url.com/';
+  
+  // Smooth scroll to tool section
+  const handleScrollToTool = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    const element = document.getElementById('how-it-works');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <>
-      <main id="hero" className="overflow-hidden">
+      <main id="hero" className="overflow-visible">
         {/* background, light shadows on top of the hero section */}
         <div
           aria-hidden
@@ -48,137 +33,105 @@ export default function HeroSection() {
 
         <section>
           <div className="relative pt-12">
-            <div className="mx-auto max-w-7xl px-6">
-              <Ripple />
-
+              <div className="mx-auto max-w-7xl px-6">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 {/* introduction */}
-                <AnimatedGroup variants={transitionVariants}>
-                  <LocaleLink
+                <div>
+                  <a
                     href={linkIntroduction}
-                    className="hover:bg-accent group mx-auto flex w-fit items-center gap-2 rounded-full border p-1 pl-4"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="hover:bg-primary/10 group mx-auto flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 p-1 pl-4 transition-colors"
                   >
-                    <span className="text-foreground text-sm">
+                    <span className="text-primary text-sm font-medium">
                       {t('introduction')}
                     </span>
 
-                    <div className="size-6 overflow-hidden rounded-full duration-500">
-                      <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-                        <span className="flex size-6">
-                          <ArrowRight className="m-auto size-3" />
-                        </span>
-                        <span className="flex size-6">
-                          <ArrowRight className="m-auto size-3" />
-                        </span>
-                      </div>
-                    </div>
-                  </LocaleLink>
-                </AnimatedGroup>
+                    <ArrowRight className="size-4 text-primary transition-transform group-hover:translate-x-1" />
+                  </a>
+                </div>
 
                 {/* title */}
-                <TextEffect
-                  per="line"
-                  preset="fade-in-blur"
-                  speedSegment={0.3}
-                  as="h1"
-                  className="mt-8 text-balance text-5xl font-bricolage-grotesque lg:mt-16 xl:text-[5rem]"
-                >
+                <h1 className="mt-8 text-balance text-5xl font-sans font-semibold tracking-tight lg:mt-16 xl:text-[5rem]">
                   {t('title')}
-                </TextEffect>
+                </h1>
 
                 {/* description */}
-                <TextEffect
-                  per="line"
-                  preset="fade-in-blur"
-                  speedSegment={0.3}
-                  delay={0.5}
-                  as="p"
-                  className="mx-auto mt-8 max-w-4xl text-balance text-lg text-muted-foreground"
-                >
+                <p className="mx-auto mt-8 max-w-4xl text-balance text-lg text-muted-foreground">
                   {t('description')}
-                </TextEffect>
+                </p>
 
                 {/* action buttons */}
-                <AnimatedGroup
-                  variants={{
-                    container: {
-                      visible: {
-                        transition: {
-                          staggerChildren: 0.05,
-                          delayChildren: 0.75,
-                        },
-                      },
-                    },
-                    ...transitionVariants,
-                  }}
-                  className="mt-12 flex flex-row items-center justify-center gap-4"
-                >
-                  <div
+                <div className="mt-12 flex flex-row items-center justify-center gap-4">
+                  <Button
                     key={1}
-                    className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
+                    size="lg"
+                    className="rounded-xl px-6 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                    onClick={handleScrollToTool}
                   >
-                    <Button
-                      asChild
-                      size="lg"
-                      className="rounded-xl px-5 text-base"
-                    >
-                      <LocaleLink href={linkPrimary}>
-                        <span className="text-nowrap">{t('primary')}</span>
-                      </LocaleLink>
-                    </Button>
-                  </div>
+                    <span className="text-nowrap">{t('primary')}</span>
+                    <ArrowDown className="ml-2 size-4" />
+                  </Button>
                   <Button
                     key={2}
-                    asChild
                     size="lg"
                     variant="outline"
-                    className="h-10.5 rounded-xl px-5"
+                    className="h-10.5 rounded-xl px-6 border-2 hover:bg-accent/50 transition-all duration-300 cursor-pointer"
+                    onClick={handleScrollToTool}
                   >
-                    <LocaleLink href={linkSecondary}>
-                      <span className="text-nowrap">{t('secondary')}</span>
-                    </LocaleLink>
+                    <span className="text-nowrap">{t('secondary')}</span>
+                    <ArrowDown className="ml-2 size-4" />
                   </Button>
-                </AnimatedGroup>
+                </div>
               </div>
             </div>
 
-            {/* images */}
-            <AnimatedGroup
-              variants={{
-                container: {
-                  visible: {
-                    transition: {
-                      staggerChildren: 0.05,
-                      delayChildren: 0.75,
-                    },
-                  },
-                },
-                ...transitionVariants,
-              }}
-            >
-              <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
-                <div
-                  aria-hidden
-                  className="bg-linear-to-b to-muted/50 absolute inset-0 z-10 from-transparent from-35%"
-                />
-                <div className="inset-shadow-2xs ring-muted/50 dark:inset-shadow-white/20 bg-muted/50 relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                  <Image
-                    className="bg-muted/50 relative hidden rounded-2xl dark:block"
-                    src="/blocks/music.png"
-                    alt="app screen"
-                    width={2796}
-                    height={2008}
-                  />
-                  <Image
-                    className="z-2 border-border/25 relative rounded-2xl border dark:hidden"
-                    src="/blocks/music-light.png"
-                    alt="app screen"
-                    width={2796}
-                    height={2008}
-                  />
+            {/* Example images: first two examples, larger size - horizontal layout */}
+            <div className="relative mt-8 w-full pb-8 sm:mt-12 sm:pb-12 md:mt-20 md:pb-16">
+              <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-8 px-4 sm:flex-row sm:gap-16 lg:gap-20">
+                {/* Example 1 */}
+                <div className="flex flex-col items-center gap-4">
+                  <div className="flex items-center justify-center gap-6">
+                    <img
+                      src="/images/list/post-1.png"
+                      alt="Example 1 original"
+                      className="h-[280px] w-[280px] object-contain transition-transform hover:scale-105 cursor-pointer"
+                      style={{ display: 'block' }}
+                    />
+                    <ArrowRight className="size-8 text-muted-foreground" />
+                    <div className="relative h-[280px] w-[280px] aspect-square flex-shrink-0 overflow-hidden rounded-full border-2 border-border shadow-lg bg-background transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-primary/50 cursor-pointer">
+                      <img
+                        src="/images/list/post-1-crop.png"
+                        alt="Example 1 cropped"
+                        className="h-full w-full object-cover transition-transform hover:scale-110"
+                        style={{ display: 'block' }}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Example 2 */}
+                <div className="flex flex-col items-center gap-4">
+                  <div className="flex items-center justify-center gap-6">
+                    <img
+                      src="/images/list/post-2.png"
+                      alt="Example 2 original"
+                      className="h-[280px] w-[280px] object-contain transition-transform hover:scale-105 cursor-pointer"
+                      style={{ display: 'block' }}
+                    />
+                    <ArrowRight className="size-8 text-muted-foreground" />
+                    <div className="relative h-[280px] w-[280px] aspect-square flex-shrink-0 overflow-hidden rounded-full border-2 border-border shadow-lg bg-background transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-primary/50 cursor-pointer">
+                      <img
+                        src="/images/list/post-2-crop.png"
+                        alt="Example 2 cropped"
+                        className="h-full w-full object-cover transition-transform hover:scale-110"
+                        style={{ display: 'block' }}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
-            </AnimatedGroup>
+            </div>
           </div>
         </section>
       </main>

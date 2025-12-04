@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { websiteConfig } from '@/config/website';
 import { cn } from '@/lib/utils';
-import { LaptopIcon, MoonIcon, SunIcon } from 'lucide-react';
+import { MoonIcon, SunIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -28,7 +28,6 @@ export function ModeSwitcherHorizontal() {
   if (!mounted) {
     return (
       <div className="flex items-center gap-2 rounded-full border p-1">
-        <div className="size-6 px-0 rounded-full" />
         <div className="size-6 px-0 rounded-full" />
         <div className="size-6 px-0 rounded-full" />
       </div>
@@ -61,19 +60,6 @@ export function ModeSwitcherHorizontal() {
         aria-label={t('dark')}
       >
         <MoonIcon className="size-4" />
-      </Button>
-
-      <Button
-        variant="ghost"
-        size="icon"
-        className={cn(
-          'size-6 px-0 rounded-full cursor-pointer',
-          theme === 'system' && 'bg-muted text-foreground'
-        )}
-        onClick={() => setTheme('system')}
-        aria-label={t('system')}
-      >
-        <LaptopIcon className="size-4" />
       </Button>
     </div>
   );

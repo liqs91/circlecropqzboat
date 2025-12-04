@@ -7,21 +7,37 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { websiteConfig } from '@/config/website';
 import { LaptopIcon, MoonIcon, SunIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 /**
  * Mode switcher component, used in the navbar
  */
 export function ModeSwitcher() {
-  if (!websiteConfig.ui.mode?.enableSwitch) {
-    return null;
+  const { setTheme, theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const t = useTranslations('Common.mode');
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <Button
+        variant="ghost"
+        size="sm"
+        className="size-8 p-0 border border-border rounded-full"
+        disabled
+      >
+        <SunIcon className="size-4" />
+      </Button>
+    );
   }
 
-  const { setTheme } = useTheme();
-  const t = useTranslations('Common.mode');
+  const isDark = resolvedTheme === 'dark' || theme === 'dark';
 
   return (
     <DropdownMenu>
@@ -29,10 +45,14 @@ export function ModeSwitcher() {
         <Button
           variant="ghost"
           size="sm"
-          className="size-8 p-0.5 border border-border rounded-full cursor-pointer"
+          className="size-8 p-0 border border-border rounded-full cursor-pointer hover:bg-accent flex items-center justify-center"
+          aria-label={t('label')}
         >
-          <SunIcon className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <MoonIcon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          {isDark ? (
+            <MoonIcon className="size-4 text-foreground" />
+          ) : (
+            <SunIcon className="size-4 text-foreground" />
+          )}
           <span className="sr-only">{t('label')}</span>
         </Button>
       </DropdownMenuTrigger>
@@ -50,13 +70,6 @@ export function ModeSwitcher() {
         >
           <MoonIcon className="mr-2 size-4" />
           <span>{t('dark')}</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => setTheme('system')}
-          className="cursor-pointer"
-        >
-          <LaptopIcon className="mr-2 size-4" />
-          <span>{t('system')}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

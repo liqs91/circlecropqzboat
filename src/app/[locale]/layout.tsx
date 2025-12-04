@@ -5,9 +5,6 @@ import {
   fontNotoSansMono,
   fontNotoSerif,
 } from '@/assets/fonts';
-import AffonsoScript from '@/components/affiliate/affonso';
-import PromotekitScript from '@/components/affiliate/promotekit';
-import { TailwindIndicator } from '@/components/layout/tailwind-indicator';
 import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 import { type Locale, NextIntlClientProvider, hasLocale } from 'next-intl';
@@ -45,8 +42,7 @@ export default async function LocaleLayout({
   return (
     <html suppressHydrationWarning lang={locale}>
       <head>
-        <AffonsoScript />
-        <PromotekitScript />
+        {/* 移除不必要的联盟脚本以减小初始包大小 */}
       </head>
       <body
         suppressHydrationWarning
@@ -64,7 +60,6 @@ export default async function LocaleLayout({
               {children}
 
               <Toaster richColors position="top-right" offset={64} />
-              <TailwindIndicator />
               <Analytics />
             </Providers>
           </NextIntlClientProvider>

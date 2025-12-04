@@ -1,0 +1,46 @@
+<svg width="240" height="60" viewBox="0 0 240 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#14B8A6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Stylized C with 3D ribbon effect (lighter for dark mode) -->
+  <g transform="translate(5, 10)">
+    <!-- Main C curve - lighter teal -->
+    <path d="M 8 15 
+             C 5 12, 3 18, 3 25 
+             C 3 35, 8 40, 15 42 
+             C 22 44, 30 42, 35 38 
+             C 40 34, 42 28, 40 22 
+             C 38 16, 32 12, 25 10 
+             C 18 8, 12 10, 8 15 Z" 
+          fill="url(#cGradientDark)" 
+          stroke="#2DD4BF" 
+          stroke-width="0.5"/>
+    
+    <!-- Overlapping/folded section - darker teal for 3D effect -->
+    <path d="M 30 38 
+             C 28 36, 25 35, 22 36 
+             C 20 37, 18 38, 17 40 
+             C 16 42, 17 44, 19 45 
+             C 21 46, 24 45, 26 43 
+             C 28 41, 30 39, 30 38 Z" 
+          fill="#14B8A6" 
+          opacity="0.9"/>
+  </g>
+  
+  <!-- "Circle Crop" text -->
+  <text x="55" y="38" font-family="'Segoe UI', 'Arial', sans-serif" font-size="28" font-weight="600" fill="#2DD4BF" letter-spacing="-0.5">
+    Circle Crop
+  </text>
+  
+  <!-- Underline -->
+  <line x1="55" y1="45" x2="220" y2="45" stroke="#2DD4BF" stroke-width="2.5"/>
+  
+  <!-- "IMAGE CROP IMAGE" text on the line -->
+  <text x="137.5" y="43" font-family="'Segoe UI', 'Arial', sans-serif" font-size="9" font-weight="400" fill="#14B8A6" text-anchor="middle" letter-spacing="1">
+    IMAGE CROP IMAGE
+  </text>
+</svg>
