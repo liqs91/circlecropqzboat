@@ -4,7 +4,7 @@ import type { Locale } from 'next-intl';
 /**
  * Get the base URL of the application
  * In browser/client-side, use window.location.origin as fallback
- * In server-side, use environment variable or localhost
+ * In server-side, use environment variable, Vercel URL, or localhost
  */
 export function getBaseUrl(): string {
   // Client-side: use window.location.origin if available
@@ -12,11 +12,19 @@ export function getBaseUrl(): string {
     return window.location.origin;
   }
   
-  // Server-side: use environment variable or localhost
-  return (
-    process.env.NEXT_PUBLIC_BASE_URL ??
-    `http://localhost:${process.env.PORT ?? 3000}`
-  );
+  // Server-side: check multiple sources for base URL
+  // 1. Explicit NEXT_PUBLIC_BASE_URL environment variable
+  if (process.env.NEXT_PUBLIC_BASE_URL) {
+    return process.env.NEXT_PUBLIC_BASE_URL;
+  }
+  
+  // 2. Vercel provides VERCEL_URL (e.g., circlecropimage-qzboat.vercel.app)
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  
+  // 3. Fallback to localhost for development
+  return `http://localhost:${process.env.PORT ?? 3000}`;
 }
 
 /**
