@@ -70,7 +70,7 @@ export default function HeroSection() {
                     onClick={handleScrollToTool}
                   >
                     <span className="text-nowrap">{t('primary')}</span>
-                    <ArrowDown className="ml-2 size-4" />
+                    <ArrowDown className="ml-2 size-4 animate-bounce" />
                   </Button>
                   <Button
                     key={2}
@@ -80,7 +80,7 @@ export default function HeroSection() {
                     onClick={handleScrollToTool}
                   >
                     <span className="text-nowrap">{t('secondary')}</span>
-                    <ArrowDown className="ml-2 size-4" />
+                    <ArrowDown className="ml-2 size-4 animate-bounce" />
                   </Button>
                 </div>
               </div>

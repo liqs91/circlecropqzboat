@@ -8,10 +8,12 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Install dependencies
-COPY package.json pnpm-lock.yaml* ./
+# Explicitly copy package.json and pnpm-lock.yaml (not bun.lock)
+COPY package.json pnpm-lock.yaml ./
 # Copy config files needed for fumadocs-mdx postinstall
 COPY source.config.ts ./
 COPY content ./content
+# Install pnpm and dependencies
 RUN npm install -g pnpm && pnpm i --frozen-lockfile
 
 # Rebuild the source code only when needed

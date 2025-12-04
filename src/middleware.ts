@@ -53,18 +53,38 @@ export default async function middleware(req: NextRequest) {
     }
   }
 
+  // Get base URL for API calls - use request headers in Vercel/production
+  let baseURL = getBaseUrl();
+  // In Vercel/production, use the request host to construct the base URL
+  const host = req.headers.get('host');
+  const protocol = req.headers.get('x-forwarded-proto') || 'https';
+  if (host && (host.includes('vercel.app') || host.includes('vercel.sh') || process.env.VERCEL)) {
+    baseURL = `${protocol}://${host}`;
+  }
+
   // do not use getSession() here, it will cause error related to edge runtime
   // const session = await getSession();
-  const { data: session } = await betterFetch<Session>(
-    '/api/auth/get-session',
-    {
-      baseURL: getBaseUrl(),
-      headers: {
-        cookie: req.headers.get('cookie') || '', // Forward the cookies from the request
-      },
-    }
-  );
-  const isLoggedIn = !!session;
+  let session: Session | null = null;
+  let isLoggedIn = false;
+  
+  try {
+    const result = await betterFetch<Session>(
+      '/api/auth/get-session',
+      {
+        baseURL,
+        headers: {
+          cookie: req.headers.get('cookie') || '', // Forward the cookies from the request
+        },
+      }
+    );
+    session = result.data || null;
+    isLoggedIn = !!session;
+  } catch (error) {
+    // Log error but don't fail the middleware - allow request to continue
+    console.error('>> middleware: Failed to fetch session:', error);
+    // In case of error, assume user is not logged in
+    isLoggedIn = false;
+  }
   // console.log('middleware, isLoggedIn', isLoggedIn);
 
   // Get the pathname of the request (e.g. /zh/dashboard to /dashboard)
