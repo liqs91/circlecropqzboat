@@ -1,4 +1,3 @@
-import { betterFetch } from '@better-fetch/fetch';
 import createMiddleware from 'next-intl/middleware';
 import { type NextRequest, NextResponse } from 'next/server';
 import {
@@ -7,8 +6,6 @@ import {
   LOCALE_COOKIE_NAME,
   routing,
 } from './i18n/routing';
-import type { Session } from './lib/auth-types';
-import { getBaseUrl } from './lib/urls/urls';
 import {
   DEFAULT_LOGIN_REDIRECT,
   protectedRoutes,
@@ -16,6 +13,12 @@ import {
 } from './routes';
 
 const intlMiddleware = createMiddleware(routing);
+
+/**
+ * Better Auth session cookie name
+ * Default cookie name used by Better Auth
+ */
+const SESSION_COOKIE_NAME = 'better-auth.session_token';
 
 /**
  * 1. Next.js middleware
@@ -26,11 +29,13 @@ const intlMiddleware = createMiddleware(routing);
  *
  * In Next.js middleware, it's recommended to only check for the existence of a session cookie
  * to handle redirection. To avoid blocking requests by making API or database calls.
+ * 
+ * IMPORTANT: We only check for the existence of the session cookie, not validate it.
+ * Actual session validation happens in the API routes and server components.
  */
 export default async function middleware(req: NextRequest) {
   const { nextUrl } = req;
-  console.log('>> middleware start, pathname', nextUrl.pathname);
-
+  
   // Handle internal docs link redirection for internationalization
   // Check if this is a docs page without locale prefix
   if (nextUrl.pathname.startsWith('/docs/') || nextUrl.pathname === '/docs') {
@@ -45,47 +50,14 @@ export default async function middleware(req: NextRequest) {
       LOCALES.includes(preferredLocale)
     ) {
       const localizedPath = `/${preferredLocale}${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`;
-      console.log(
-        '<< middleware end, redirecting docs link to preferred locale:',
-        localizedPath
-      );
       return NextResponse.redirect(new URL(localizedPath, nextUrl));
     }
   }
 
-  // Get base URL for API calls - use request headers in Vercel/production
-  let baseURL = getBaseUrl();
-  // In Vercel/production, use the request host to construct the base URL
-  const host = req.headers.get('host');
-  const protocol = req.headers.get('x-forwarded-proto') || 'https';
-  if (host && (host.includes('vercel.app') || host.includes('vercel.sh') || process.env.VERCEL)) {
-    baseURL = `${protocol}://${host}`;
-  }
-
-  // do not use getSession() here, it will cause error related to edge runtime
-  // const session = await getSession();
-  let session: Session | null = null;
-  let isLoggedIn = false;
-  
-  try {
-    const result = await betterFetch<Session>(
-      '/api/auth/get-session',
-      {
-        baseURL,
-        headers: {
-          cookie: req.headers.get('cookie') || '', // Forward the cookies from the request
-        },
-      }
-    );
-    session = result.data || null;
-    isLoggedIn = !!session;
-  } catch (error) {
-    // Log error but don't fail the middleware - allow request to continue
-    console.error('>> middleware: Failed to fetch session:', error);
-    // In case of error, assume user is not logged in
-    isLoggedIn = false;
-  }
-  // console.log('middleware, isLoggedIn', isLoggedIn);
+  // Check for session cookie existence (not validation)
+  // This is safe for Edge Runtime and follows Next.js best practices
+  const sessionCookie = req.cookies.get(SESSION_COOKIE_NAME);
+  const isLoggedIn = !!sessionCookie?.value;
 
   // Get the pathname of the request (e.g. /zh/dashboard to /dashboard)
   const pathnameWithoutLocale = getPathnameWithoutLocale(
